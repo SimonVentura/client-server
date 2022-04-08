@@ -5,6 +5,7 @@
 package com.mycompany.gestionesoket;
 
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,17 +25,16 @@ public class Client {
             socket=new Socket("127.0.0.1",port);
             System.out.println("client connesso con "+ socket.getRemoteSocketAddress());
             System.out.println("posta del clinet"+ socket.getLocalPort());
-        } 
-                    
-          catch(ConnectExeption ex)
+        }            
+          catch(ConnectException ex)
                   {
                     System.err.print("server non disponibile");
                   }
-          
-        
         catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+         //chiusura collegamento
         finally
         {
             try {

@@ -36,7 +36,10 @@ public class Server {
             System.err.println("errore nella creazione del server e nell'avvio del servizio");
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
-                    //3 scambio dati
+        //3 scambio dati
+        
+        
+        
         //4 chiusura socket
        finally
         {
